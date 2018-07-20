@@ -85,28 +85,28 @@ background-color: #F4ECF7;
     display: none;
 }
 
-/* Next & previous buttons */
+Next & previous buttons
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 25%;
   width: auto;
-  margin-top: -22px;
+  margin-top: 0px;
   padding: 16px;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
 
-/* Position the "next button" to the right */
+ Position the "next button" to the right
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+ /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -164,7 +164,31 @@ background-color: #F4ECF7;
   from {opacity: .4}
   to {opacity: 1}
 }
+ .slideshow > div {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 240px;
+    max-height: 100%;
+}
+.slideshow > div > img {
+    height: 100%;
+    width: 100%;
+}
+var slideIndex = 0;
+showSlides();
 
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 1000); // Change image every 2 seconds
+}
 </style>
 
 <html>
@@ -176,8 +200,6 @@ background-color: #F4ECF7;
   <body>
 <!-- code for tab again -->
 
-
-  <!--  <img src="profile.jpg" style="width:500px;height:100px;"> -->
     <h1> Navi Beesetti </h1>
     <button class="tablink" onclick="openCity('General-Info', this, '#D6EAF8')" id="defaultOpen">General Info</button>
     <button class="tablink" onclick="openCity('Personal-Life', this, '#D6EAF8')">Personal Life</button>
@@ -185,7 +207,7 @@ background-color: #F4ECF7;
     <button class="tablink" onclick="openCity('Extra-Shtuff', this, '#D6EAF8')">Extra Shtuff</button>
     <div id="General-Info" class="tabcontent">
     <div class ="group1">
-      <p>Being your average angsty and quirky teenage girl, I would have to say that what I’m doing right now, coding, is probably the most accomplished skill I have ever acquired. Other than learning how to code, I don’t mind listening to music, hanging out with friends, online shopping, and listening to music! I’m going to be a senior this year at Neuqua Valley High School, and I'm planning on majoring in Electrical Engineering when applying to college. ;)
+      <p>Being your average angsty and quirky teenage girl, I would have to say that what I’m doing right now, coding, is probably the most accomplished skill I have ever acquired. Other than learning how to code, I don’t mind listening to music, hanging out with friends, and listening to music! I’m going to be a senior this year at Neuqua Valley High School, and I'm planning on majoring in Electrical Engineering when applying to college. ;)
       </p>
     </div>
     <div class ="profilepic">
@@ -229,9 +251,11 @@ background-color: #F4ECF7;
     <br> <b>Business Professionals of America: </b> Joined this club my Junior year of high school, and it has helped me thrive in multiple aspects of my life that require public speaking. (School Year(s): 2017-2018)
     <br> <b>Girls Who Code Summer Immersion Program Alumnus: </b> This summer, I was selected as one of 20 girls to to attend the selective SIP program at AT&T with Girls Who Code, where I was also mentored by AT&T employees. By the end of the program, I programmed many applications using Python, Java Script, HTML, Google Maps API, Django, and CSS with my team. (June to August 2018)
     </div>
-    <img src="girls.jpg" style="width:25%">
-    <img src="nvhs.jpg"style="width:25%">
-    <img src="bpa2.jpg"style="width:25%">
+    <img src="girls.jpg" height="100px" width="250px/">
+    <img src="nvhs.jpg" height="100px" width="250px/">
+    <img src="bpa2.jpg" height="100px" width="250px/">
+    <img src="ball.jpg" height="100px" width="250px/">
+
     <div class="group4">
     </div>
     </div>
@@ -332,3 +356,4 @@ function showSlides(n) {
   </body>
 
 </html>
+
